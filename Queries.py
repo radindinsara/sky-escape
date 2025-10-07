@@ -23,6 +23,16 @@ def register_player(name, role):
     conn.close()
     return player_id
 
+def fetch_random_airports(limit=10):
+    conn = db.get_db()
+    if not conn:
+        return []
+    cursor = conn.cursor(dictionary=True)
+    cursor.execute(f"SELECT id, ident, name, iso_country FROM airport ORDER BY RAND() LIMIT {limit}")
+    airports = cursor.fetchall()
+    conn.close()
+    return airports
+
 def log_action(game_id, description):
     """Log every move or event."""
     conn = db.get_db()

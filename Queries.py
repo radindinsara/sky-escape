@@ -45,3 +45,42 @@ def log_action(game_id, description):
     """, (game_id, datetime.datetime.now(), description))
     conn.commit()
     conn.close()
+
+def update_game_result(game_id, score, result, end_time):
+    """Update the existing record with final score and result."""
+    conn = db.get_db()
+    if not conn:
+        return
+    cursor = conn.cursor()
+    cursor.execute("""
+        UPDATE game_results
+        SET score = %s, result = %s, end_time = %s
+        WHERE id = %s
+    """, (score, result, end_time, game_id))
+    conn.commit()
+    conn.close()
+
+def update_player_stats(player_id, score):
+    """Update total games and total score for a player."""
+    conn = db.get_db()
+    if not conn:
+        return
+    cursor = conn.cursor()
+    cursor.execute("""UPDATE players SET total_games = total_games + 1, total_score = total_score + %s WHERE id = %s""", (score, player_id))
+    conn.commit()
+    conn.close()
+
+def save_game_result(player_id, role, score, result, start_time, end_time):
+    """Save final game result to the database."""
+    conn = db.get_db()
+    if not conn:
+        return None
+    cursor = conn.cursor()
+    cursor.execute("""
+        INSERT INTO game_results (player_id, role, start_time, end_time, score, result)
+        VALUES (%s, %s, %s, %s, %s, %s)
+    """, (player_id, role, start_time, end_time, score, result))
+    conn.commit()
+    game_id = cursor.lastrowid
+    conn.close()
+    return game_id

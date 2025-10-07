@@ -1,7 +1,8 @@
 from datetime import time, datetime
 from random import random
 
-from Queries import( register_player, log_action, fetch_random_airports)
+from Queries import( register_player, log_action, fetch_random_airports
+                     ,update_game_result , update_player_stats , save_game_result)
 
 class SkyEscapeGame:
     def __init__(self, player_name, role):
@@ -35,7 +36,7 @@ class SkyEscapeGame:
         print(f"Your starting airport: {self.player_airport['name']} ({self.player_airport['ident']})")
         print("\nGame starts now! Timer: 2 minutes ⏰\n")
 
-        # Save game start
+
         self.game_id = save_game_result(
             self.player_id, self.role, self.score, "In Progress", self.start_time, self.start_time
         )
@@ -73,7 +74,7 @@ class SkyEscapeGame:
                 log_action(self.game_id, f"Golden Airport reached — bonus +5 points. New Score: {self.score}")
 
 
-            # Check if caught
+
             if self.player_airport == self.computer_airport:
                 print("\n💥 Both met at the same airport!")
                 self.end_game("Win" if self.role == "Police" else "Lose")
@@ -81,7 +82,20 @@ class SkyEscapeGame:
                 print(message)
                 return
 
-            # Score update
+
             self.score = self.score - 10 if self.role == "Police" else self.score + 10
             print(f"Current Score: {self.score}")
             log_action(self.game_id, f"Score updated: {self.score}")
+
+            # Time-out result
+            result = "Win" if self.role == "Thief" else "Lose"
+            msg = "🎉 You escaped successfully!" if self.role == "Thief" else "⌛ The thief escaped!"
+            print(msg)
+            self.end_game(result)
+            print(f"Final Score: {self.score}")
+
+        def end_game(self, result):
+            end_time = datetime.datetime.now()
+            update_game_result(self.game_id, self.score, result, end_time)
+            update_player_stats(self.player_id, self.score)
+            log_action(self.game_id, f"Game ended: {result}")

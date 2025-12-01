@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
 body {
     background-color: lightblue;
     font-family: Arial;
@@ -13,10 +15,13 @@ body {
     display: block;
 }
 
+/* Title with Bebas Neue font */
 h1 {
+    font-family: 'Bebas Neue', sans-serif;
     color: darkblue;
-    font-size: 40px;
+    font-size: 80px;
     margin-top: 30px;
+    letter-spacing: 5px;
 }
 
 .input-box {

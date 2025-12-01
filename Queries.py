@@ -42,7 +42,7 @@ def log_action(game_id, description):
     cursor.execute("""
         INSERT INTO game_actions (game_id, action_time, description)
         VALUES (%s, %s, %s)
-    """, (game_id, datetime.datetime.now(), description))
+    """, (game_id, datetime.now(), description))
     conn.commit()
     conn.close()
 

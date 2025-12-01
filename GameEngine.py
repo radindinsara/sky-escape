@@ -44,7 +44,6 @@ The world is watching as Interpol launches a high-stakes mission.
             sys.stdout.write(char)
             sys.stdout.flush()
             time.sleep(0.02)
-            print("\n")
 
     def setup_game(self):
         self.airports = fetch_random_airports(10)

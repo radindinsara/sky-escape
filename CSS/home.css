@@ -1,0 +1,60 @@
+body {
+    background-color: lightblue;
+    font-family: Arial;
+    text-align: center;
+    padding-top: 50px;
+}
+
+.page {
+    display: none;
+}
+
+#page1 {
+    display: block;
+}
+
+h1 {
+    color: darkblue;
+    font-size: 40px;
+    margin-top: 30px;
+}
+
+.input-box {
+    margin-top: 80px;
+}
+
+.input-box label {
+    font-size: 20px;
+    color: darkblue;
+}
+
+input {
+    padding: 12px;
+    width: 300px;
+    margin: 10px;
+    font-size: 16px;
+    border: 2px solid darkblue;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: green;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: darkgreen;
+}
+
+.start-button {
+    padding: 15px 40px;
+    font-size: 20px;
+    background-color: blue;
+}
+
+.start-button:hover {
+    background-color: darkblue;
+}

@@ -1,20 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>SKY HEIST</title>
+    <title>Sky Heist Game</title>
     <link rel="stylesheet" href="CSS/home.css">
 </head>
 <body>
 
     <div id="page1" class="page">
-        <h1>SKY Heist</h1>
-        <br><br><br>
-        <div class="input-box">
-            <label>Enter Your Name</label><br><br>
-            <input type="text" id="nameInput" placeholder="Type your name here">
+        <div class="content-box">
+            <h1>SKY HEIST</h1>
+            <div class="input-box">
+                <label>Enter Your Name: </label><br><br>
+                <input type="text" id="nameInput" placeholder="Type your name here">
+            </div>
+            <button class="start-button" onclick="startGame()">Start Game</button>
         </div>
-        <br><br>
-        <button class="start-button" onclick="startGame()">Start Game</button>
+
+        <div class="tagline">
+            <p>Be the thief. Be the law.</p>
+            <p>Own the skies.</p>
+        </div>
     </div>
 
     <script src="JS/home.js"></script>

@@ -1,13 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald&family=Press+Start+2P&display=swap');
 
 body {
     background-image: url('../images/sky_heist.jpg');
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
-    font-family: Arial;
     text-align: center;
-    padding-top: 50px;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
 }
 
 .page {
@@ -16,57 +16,66 @@ body {
 
 #page1 {
     display: block;
+    padding-top: 100px;
+}
+
+.content-box {
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 500px;
+    margin: 0 auto;
+    padding: 40px;
+    border-radius: 30px;
 }
 
 h1 {
     font-family: 'Bebas Neue', sans-serif;
     color: white;
-    font-size: 80px;
-    margin-top: 30px;
-    letter-spacing: 5px;
-    text-shadow:
-        -3px -3px 0 black,
-        3px -3px 0 black,
-        -3px 3px 0 black,
-        3px 3px 0 black;
-}
-
-.input-box {
-    margin-top: 80px;
+    font-size: 70px;
+    margin: 20px;
+    text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black, 2px 2px 0 black;
 }
 
 .input-box label {
-    font-size: 20px;
-    color: darkblue;
+    font-family: 'Oswald', sans-serif;
+    font-size: 22px;
+    color: white;
 }
 
 input {
-    padding: 12px;
-    width: 300px;
-    margin: 10px;
+    padding: 10px;
+    width: 280px;
+    margin: 15px;
     font-size: 16px;
-    border: 2px solid darkblue;
-}
-
-button {
-    padding: 10px 20px;
-    margin: 10px;
-    background-color: green;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: darkgreen;
+    border: 2px solid white;
+    border-radius: 15px;
 }
 
 .start-button {
-    padding: 15px 40px;
-    font-size: 20px;
-    background-color: blue;
+    font-family: 'Press Start 2P', cursive;
+    padding: 15px 30px;
+    font-size: 12px;
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
 }
 
 .start-button:hover {
-    background-color: darkblue;
+    background-color: darkgreen;
+}
+
+.tagline {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 10px;
+    color: black;
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+.tagline p {
+    margin: 5px;
 }

@@ -8,5 +8,5 @@ function startGame() {
         return;
     }
 
-    alert("Welcome " + playerName + "!");
+    alert("Welcome to SKY HEIST, " + playerName + "!!");
 }

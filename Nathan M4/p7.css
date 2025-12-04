@@ -29,3 +29,13 @@ h2 {
 .section {
     margin-top: 20px;
 }
+button {
+  padding: 10px 16px;
+  border-radius: 6px;
+  border: none;
+  background: #007bff;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  margin-right: 10px;
+}

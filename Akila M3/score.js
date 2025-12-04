@@ -20,9 +20,9 @@ if (thiefScoreText && thiefInput) {
 }
 
 
-// =============================
-// POLICE LOGIC (if police IDs exist)
-// =============================
+
+// POLICE
+
 const policeScoreText = document.getElementById("police-score");
 const policeInput = document.getElementById("policeInput");
 

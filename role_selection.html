@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Sky Heist – Page 2</title>
+    <title>Sky Heist – Role Selection</title>
     <link rel="stylesheet" href="CSS/page2.css">
     <script src="JS/page2.js" defer></script>
 </head>
@@ -12,36 +12,39 @@
     <div id="page2">
 
         <div class="top-bar">
-            <button id="backBtn">⟵</button>
+            <button id="exitBtn">Exit</button>
             <div class="player-name" id="playerNameDisplay">Player</div>
             <button id="homeBtn">🏠</button>
         </div>
 
-        <div class="content-area">
-
+        <div class="content-box">
             <h1>Welcome to Sky Heist</h1>
-
-            <p class="description">
-                Sky Heist is a quick 2-minute action game where you can choose to play as a
-                <strong>Thief</strong> or a <strong>Police Officer</strong>. Race across the map,
-                reach the <strong>Golden Airport</strong> for a special advantage, and try to
-                complete your mission before the time runs out.
+            <p>
+                Sky Heist is a fast 2-minute action game. You can choose Thief or Police
+                and try to reach the Golden Airport before time runs out.
             </p>
+        </div>
 
-            <p class="tagline">
-                Be the thief. Be the law.<br>
-                Own the skies.
-            </p>
-
-            <h2>Available Roles</h2>
-
-            <div class="role-boxes">
-                <div class="role">Thief</div>
-                <div class="role">Police</div>
+        <div class="roles-section">
+            <div class="role-card">
+                <div class="icon-circle">
+                    <img src="images/thief_icon.png" alt="Thief">
+                </div>
+                <p class="role-name">Thief</p>
             </div>
 
-            <button id="continueBtn" class="continue-button">Continue</button>
+            <div class="role-card">
+                <div class="icon-circle">
+                    <img src="images/police_icon.png" alt="Police">
+                </div>
+                <p class="role-name">Police</p>
+            </div>
+        </div>
 
+        <button class="continue-button" id="continueBtn">CONTINUE</button>
+
+        <div class="bottom-tagline">
+            Be the thief. Be the law.<br>Own the skies.
         </div>
 
     </div>

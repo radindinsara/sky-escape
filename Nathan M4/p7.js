@@ -11,3 +11,7 @@ function loadP7() {
   document.getElementById('p7-message').textContent= message;
 }
 
+document.addEventListener('click', function (e) {
+  if (!e.target) return;
+
+

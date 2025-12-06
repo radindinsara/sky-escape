@@ -1,0 +1,47 @@
+/* PAGE 3 */
+#page3 {
+    padding: 20px;
+    text-align: center;
+}
+
+#page3 h2 {
+    margin-bottom: 15px;
+}
+
+#startGameBtn {
+    padding: 10px 20px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+/* PAGE 4 */
+#page4 {
+    padding: 20px;
+}
+
+#gameHeader {
+    display: flex;
+    justify-content: space-between;
+    background: #e6e6e6;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.logBox {
+    height: 250px;
+    border: 1px solid #aaa;
+    padding: 10px;
+    overflow-y: auto;
+    margin-bottom: 20px;
+    background-color: #fafafa;
+}
+
+#gameControls input {
+    padding: 8px;
+}
+
+#goBtn {
+    padding: 8px 15px;
+    margin-left: 10px;
+    cursor: pointer;
+}

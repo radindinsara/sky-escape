@@ -17,36 +17,38 @@
             <button id="homeBtn">🏠</button>
         </div>
 
-        <div class="content-box">
-            <h1>Welcome to Sky Heist</h1>
-            <p>
-                Sky Heist is a fast 2-minute action game. You can choose Thief or Police
-                and try to reach the Golden Airport before time runs out.
-            </p>
-        </div>
+        <div class="selection-area">
 
-        <div class="roles-section">
-            <div class="role-card">
-                <div class="icon-circle">
-                    <img src="images/thief_icon.png" alt="Thief">
-                </div>
-                <p class="role-name">Thief</p>
+            <div class="content-box">
+                <h1>Welcome to Sky Heist</h1>
+                <p>
+                    Sky Heist is a fast 2-minute action game. You can choose Thief or Police
+                    and try to reach the Golden Airport before time runs out.
+                </p>
             </div>
 
-            <div class="role-card">
-                <div class="icon-circle">
-                    <img src="images/police_icon.png" alt="Police">
+            <div class="roles-section">
+                <div class="role-card" onclick="selectRole('Thief')">
+                    <div class="icon-circle">
+                        <img src="images/thief_icon.png" alt="Thief">
+                    </div>
+                    <p class="role-name">Thief</p>
                 </div>
-                <p class="role-name">Police</p>
-            </div>
-        </div>
 
-        <button class="continue-button" id="continueBtn">CONTINUE</button>
+                <div class="role-card" onclick="selectRole('Police')">
+                    <div class="icon-circle">
+                        <img src="images/police_icon.png" alt="Police">
+                    </div>
+                    <p class="role-name">Police</p>
+                </div>
+            </div>
+
+        </div>
+        <button class="continue-button">Continue</button>
 
         <div class="bottom-tagline">
-            Be the thief. Be the law.<br>Own the skies.
+            <p>Ready to fly?</p>
         </div>
-
     </div>
 
 </body>

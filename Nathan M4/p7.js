@@ -14,4 +14,22 @@ function loadP7() {
 document.addEventListener('click', function (e) {
   if (!e.target) return;
 
+    if (e.target.id === 'p7-play-again') {
+    // reset or keep name/role, but start game path again
+    // if you prefer to preserve role: call showPage(3) so player can Start Game again
+    showPage(3);
+  }
+
+  if (e.target.id === 'p7-back-home') {
+    // go back to start screen
+    showPage(1);
+  }
+
+  if (e.target.id === 'p7-download-readme') {
+    // generate a small README summary on the fly and trigger download
+    const player = localStorage.getItem('playerName') || 'Player';
+    const role   = localStorage.getItem('finalRole') || localStorage.getItem('playerRole') || '—';
+    const score  = localStorage.getItem('finalScore') || '—';
+    const message = localStorage.getItem('finalMessage') || '—';
+
 

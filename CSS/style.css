@@ -1,0 +1,132 @@
+body {
+    background-color: #222;
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.page {
+    display: none;
+    padding: 50px;
+    min-height: 100vh;
+}
+
+/* PAGE 3 */
+.roleBox {
+    border: 2px solid white;
+    padding: 30px;
+    width: 70%;
+    margin: 0 auto 30px auto;
+    border-radius: 15px;
+    background-color: rgba(255,255,255,0.1);
+    text-align: left;
+    font-size: 20px;
+}
+
+#selectedRole {
+    font-size: 32px;
+    color: yellow;
+    margin-bottom: 20px;
+}
+
+#roleInstructions {
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+#goodLuck {
+    font-size: 48px;
+    margin-bottom: 30px;
+}
+
+#startGameBtn {
+    padding: 15px 40px;
+    font-size: 20px;
+    background-color: green;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+#startGameBtn:hover {
+    background-color: darkgreen;
+}
+
+/* PAGE 4 HEADER BOXES */
+.headerFlex {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.headerBox {
+    border: 2px solid white;
+    padding: 20px 40px;
+    border-radius: 15px;
+    background-color: rgba(255,255,255,0.1);
+    font-size: 22px;
+}
+
+/* LOG BOX WITH AIRPORTS & IMAGE */
+.logBox {
+    width: 80%;
+    margin: 0 auto 30px auto;
+    border: 2px solid white;
+    border-radius: 15px;
+    padding: 20px;
+    background-color: rgba(255,255,255,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.airportListBox {
+    flex: 1;
+    text-align: left;
+}
+
+#airportList {
+    list-style: none;
+    padding-left: 0;
+    font-size: 20px;
+}
+
+.airportListBox li {
+    margin-bottom: 10px;
+}
+
+.airportImageBox {
+    margin-left: 20px;
+}
+
+.airportImg {
+    width: 250px;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* INPUT & BUTTON */
+#airportInput {
+    padding: 12px;
+    font-size: 18px;
+    border-radius: 10px;
+    border: 2px solid white;
+    width: 300px;
+}
+
+#goBtn {
+    padding: 12px 25px;
+    font-size: 18px;
+    margin-left: 15px;
+    background-color: green;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#goBtn:hover {
+    background-color: darkgreen;
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- PAGE 3 – Role Instructions -->
+<section id="page3" class="page">
+    <div class="roleBox">
+        <h2 id="selectedRole">You have selected ...</h2>
+        <p id="roleInstructions">
+            Instructions go here...
+        </p>
+    </div>
+
+    <h1 id="goodLuck">Good Luck!</h1>
+    <button id="startGameBtn">Start</button>
+</section>
+
+<!-- PAGE 4 – Game Layout -->
+<section id="page4" class="page">
+    <div id="gameHeader" class="headerFlex">
+        <div class="headerBox">Role: <span id="headerRole"></span></div>
+        <div class="headerBox">Time: <span id="headerTime">120</span></div>
+        <div class="headerBox">Score: <span id="headerScore"></span></div>
+    </div>
+
+    <!-- GAME LOG BOX WITH IMAGE -->
+    <div class="logBox">
+        <div class="airportListBox">
+            <ul id="airportList">
+                <!-- Airports will be numbered here -->
+            </ul>
+        </div>
+        <div class="airportImageBox">
+            <img src="images/placeholder.jpg" alt="Airports" class="airportImg">
+        </div>
+    </div>
+
+    <div id="gameControls">
+        <input type="number" id="airportInput" placeholder="Enter airport number" min="1" max="15">
+        <button id="goBtn">Go</button>
+    </div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>

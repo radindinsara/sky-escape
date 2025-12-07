@@ -1,47 +1,107 @@
-/* PAGE 3 */
+/* === PAGE 3 (Role Info Page) === */
+
 #page3 {
-    padding: 20px;
-    text-align: center;
+    display: none;
+    padding-top: 80px;
 }
 
-#page3 h2 {
+.role-box {
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 500px;
+    margin: 0 auto;
+    padding: 30px;
+    border-radius: 25px;
+}
+
+#roleTitle {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 45px;
+    color: white;
     margin-bottom: 15px;
+    text-shadow: -2px -2px 0 black, 2px -2px 0 black;
+}
+
+#roleDescription {
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+    color: white;
+    line-height: 1.4;
+    margin-bottom: 30px;
 }
 
 #startGameBtn {
-    padding: 10px 20px;
-    margin-top: 20px;
+    font-family: 'Press Start 2P', cursive;
+    padding: 12px 25px;
+    font-size: 12px;
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 15px;
     cursor: pointer;
 }
 
-/* PAGE 4 */
-#page4 {
-    padding: 20px;
+#startGameBtn:hover {
+    background-color: darkgreen;
 }
 
-#gameHeader {
-    display: flex;
-    justify-content: space-between;
-    background: #e6e6e6;
-    padding: 10px;
-    margin-bottom: 20px;
+/* === PAGE 4 (Game Layout Page) === */
+
+#page4 {
+    display: none;
+    padding-top: 50px;
+}
+
+.game-box {
+    background-color: rgba(0, 0, 0, 0.75);
+    width: 700px;
+    margin: 0 auto;
+    padding: 25px;
+    border-radius: 25px;
+}
+
+#gameHeader p {
+    font-family: 'Oswald', sans-serif;
+    font-size: 22px;
+    color: white;
+    margin: 10px 0;
 }
 
 .logBox {
-    height: 250px;
-    border: 1px solid #aaa;
-    padding: 10px;
+    height: 230px;
     overflow-y: auto;
-    margin-bottom: 20px;
-    background-color: #fafafa;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 2px solid white;
+    border-radius: 15px;
+    padding: 10px;
+    margin-top: 15px;
+    color: white;
+    text-align: left;
 }
 
-#gameControls input {
-    padding: 8px;
+#gameControls {
+    margin-top: 20px;
+}
+
+#airportInput {
+    width: 250px;
+    padding: 10px;
+    border-radius: 15px;
+    border: 2px solid white;
+    font-size: 16px;
 }
 
 #goBtn {
-    padding: 8px 15px;
+    font-family: 'Press Start 2P', cursive;
+    padding: 12px 25px;
+    font-size: 12px;
+    background-color: green;
+    color: white;
+    border: none;
     margin-left: 10px;
+    border-radius: 15px;
     cursor: pointer;
+}
+
+#goBtn:hover {
+    background-color: darkgreen;
 }

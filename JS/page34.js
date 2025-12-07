@@ -8,11 +8,11 @@ function showPage(num){
 
 // LOAD ROLE INSTRUCTIONS
 function loadRoleInstructions(){
-    let role = localStorage.getItem("playerRole") || "thief";
+    let role = sessionStorage.getItem("playerRole") || "thief";
     const selectedRole = document.getElementById("selectedRole");
     const instructions = document.getElementById("roleInstructions");
 
-    if(role === "police"){
+    if(role === "Police"){
         selectedRole.innerText = "You have selected Police";
         instructions.innerHTML = `
             - Catch the thief.<br>
@@ -30,17 +30,34 @@ function loadRoleInstructions(){
         `;
     }
 
-    document.getElementById("headerScore").innerText = role==="police"?250:0;
+
 }
 
 // LOAD AIRPORTS (NUMBERED)
-function loadGameLayout(){
-    let airports = ["JFK","LAX","ORD","ATL","DFW","DEN","SFO","SEA","MIA","BOS","LAS","PHX","IAH","MSP","CLT"];
+async function loadGameLayout(){
+
+    document.getElementById("headerRole").innerText = sessionStorage.getItem("playerRole");
+     document.getElementById("headerScore").innerText = (sessionStorage.getItem("playerRole"))==="Police"?250:0;
+
+    const res = await fetch("http://127.0.0.1:5000/api/airports");
+    const data = await res.json();
+    console.log("Airports API response:", data);
+    let airports = [];
+    if (Array.isArray(data)) {
+      airports = data;
+    } else if (Array.isArray(data.airports)) {
+      airports = data.airports;
+    } else {
+      console.error("Unexpected airports response shape:", data);
+    }
+
+    //let airports = ["JFK","LAX","ORD","ATL","DFW","DEN","SFO","SEA","MIA","BOS","LAS","PHX","IAH","MSP","CLT"];
     const airportList = document.getElementById("airportList");
     airportList.innerHTML = "";
     airports.forEach((code,index)=>{
         let li = document.createElement("li");
-        li.innerText = `${index+1}. ${code}`;
+        li.innerText = `${index+1}. ${code.name} - ${code.ident}`;
+        li.dataset.ident = code.ident;
         airportList.appendChild(li);
     });
 }
@@ -59,6 +76,19 @@ document.getElementById("goBtn").onclick = function(){
         alert("Enter a number between 1 and 15!");
         input.value="";
         return;
+    }
+    else{
+    const airportNumber = document.getElementById("airportInput").value;
+
+    // get all list items
+    const items = document.querySelectorAll("#airportList li");
+
+    const selected = items[airportNumber - 1];
+
+    const ident = selected.dataset.ident;   // <-- here is your IDENT
+
+    sessionStorage.setItem("AirPortSelected",ident);
+
     }
     input.value="";
 }

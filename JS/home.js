@@ -7,6 +7,10 @@ function startGame() {
         alert("Please enter your name!");
         return;
     }
+    else{
+        window.location.href = "role_selection.html";
+        sessionStorage.setItem("PlayerName", playerName);
+    }
     console.log("Game starting for:", playerName);
 }
 

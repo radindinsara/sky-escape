@@ -13,7 +13,8 @@
 
         <div class="top-bar">
             <button id="exitBtn">Exit</button>
-            <div class="player-name" id="playerNameDisplay">Player</div>
+            <div class="player-name" id="playerNameDisplay">
+            </div>
             <button id="homeBtn">🏠</button>
         </div>
 
@@ -28,23 +29,22 @@
             </div>
 
             <div class="roles-section">
-                <div class="role-card" onclick="selectRole('Thief')">
+                <div class="role-card">
                     <div class="icon-circle">
-                        <img src="images/thief_icon.png" alt="Thief">
+                        <img src="images/thief_icon.png" alt="Thief" id="thiefBtn">
                     </div>
                     <p class="role-name">Thief</p>
                 </div>
 
-                <div class="role-card" onclick="selectRole('Police')">
+                <div class="role-card">
                     <div class="icon-circle">
-                        <img src="images/police_icon.png" alt="Police">
+                        <img src="images/police_icon.png" alt="Police" id="policeBtn">
                     </div>
                     <p class="role-name">Police</p>
                 </div>
             </div>
 
         </div>
-        <button class="continue-button">Continue</button>
 
         <div class="bottom-tagline">
             <p>Ready to fly?</p>

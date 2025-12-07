@@ -22,6 +22,21 @@ TIME_LIMIT_SECONDS = 120
 def get_airports():
     airports = GameEngine.fetch_random_airports()
     return jsonify(airports)
+@app.post("/api/move")
+def move():
+    data = request.get_json()
+    ident = data.get("ident")
+
+    # here you would adapt your GameEngine to handle one move,
+    # not the whole input() loop
+    # e.g. result = game.handle_move(ident)
+
+    # dummy response example:
+    result = {
+        "message": f"Moved to {ident}",
+        "score": game.score,
+    }
+    return jsonify(result)
 
 if __name__ == "__main__":
     # Debug mode only for development

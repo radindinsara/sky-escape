@@ -37,7 +37,7 @@ function loadRoleInstructions(){
 async function loadGameLayout(){
 
     document.getElementById("headerRole").innerText = sessionStorage.getItem("playerRole");
-     document.getElementById("headerScore").innerText = (sessionStorage.getItem("playerRole"))==="Police"?250:0;
+    document.getElementById("headerScore").innerText = (sessionStorage.getItem("playerRole"))==="Police"?250:0;
 
     const res = await fetch("http://127.0.0.1:5000/api/airports");
     const data = await res.json();
@@ -67,30 +67,62 @@ document.getElementById("startGameBtn").onclick = function(){
     showPage(4);
     loadGameLayout();
 }
-
 // GO BUTTON – only allow numbers
 document.getElementById("goBtn").onclick = function(){
+
+   // Start timer first time GO is clicked
+    startTimer();
+
     let input = document.getElementById("airportInput");
     let num = parseInt(input.value);
-    if(isNaN(num) || num<1 || num>15){
-        alert("Enter a number between 1 and 15!");
-        input.value="";
-        return;
-    }
-    else{
-    const airportNumber = document.getElementById("airportInput").value;
-
-    // get all list items
     const items = document.querySelectorAll("#airportList li");
 
-    const selected = items[airportNumber - 1];
-
-    const ident = selected.dataset.ident;   // <-- here is your IDENT
-
-    sessionStorage.setItem("AirPortSelected",ident);
-
+    if (isNaN(num) || num < 1 || num > items.length) {
+        input.value = "";
+        return;
     }
+
+    const selected = items[num - 1];
+    const ident = selected.dataset.ident;
+
+    sessionStorage.setItem("AirPortSelected", ident);
+
+    // Update score based on role
+    updateScore();
+
     input.value="";
+
+}
+
+let timerStarted =false;
+let timerInterval=null;
+let timeLeft = 120;
+
+function startTimer() {
+    if (timerStarted) return; // prevent starting again
+
+    timerStarted = true;
+
+    timerInterval = setInterval(() => {
+        timeLeft--;
+        document.getElementById("headerTime").innerText = timeLeft;
+
+        if (timeLeft <= 0) {
+            clearInterval(timerInterval);
+            alert("⏳ Time's up!");
+        }
+    }, 1000);
+}
+
+function updateScore() {
+     let role = sessionStorage.getItem("playerRole") || "thief";
+     let score = document.getElementById("headerScore").innerText;
+    if (role === "Police") {
+        score -= 10;
+    } else if (role === "Thief") {
+        score += 10;
+    }
+    document.getElementById("headerScore").innerText = score;
 }
 
 // ON PAGE LOAD

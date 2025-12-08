@@ -3,18 +3,12 @@ from flask_cors import CORS
 import datetime
 
 import GameEngine
-from GameEngine import SkyEscapeGame
-from Queries import log_action
-
 app = Flask(__name__)
 CORS(app)
 
 
-# In-memory store for running games
-# key = game_id (int from database), value = SkyEscapeGame object
 active_games = {}
 
-# How many seconds one game lasts
 TIME_LIMIT_SECONDS = 120
 
 

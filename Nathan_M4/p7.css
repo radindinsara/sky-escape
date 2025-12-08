@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald&family=Press+Start+2P&display=swap');
+
+body {
+    background-image: url('../images/sky_heist.jpg');
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    text-align: center;
+}
+
+.summary-container {
+    background-color: rgba(0, 0, 0, 0.75);
+    width: 650px;
+    margin: 60px auto;
+    padding: 40px;
+    border-radius: 30px;
+}
+
+h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    color: white;
+    font-size: 65px;
+    margin-bottom: 20px;
+    text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black, 2px 2px 0 black;
+}
+
+.summary-section h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 28px;
+    color: white;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+.summary-section p,
+.summary-section ul li {
+    font-family: 'Oswald', sans-serif;
+    font-size: 18px;
+    color: white;
+    margin: 8px 0;
+    text-align: left;
+}
+
+.summary-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.summary-section ul li::before {
+    content: "• ";
+    color: lightgreen;
+}
+
+#playerNameText {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.result-box {
+    background-color: rgba(0, 128, 0, 0.7); /* greenish for win */
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 20px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 22px;
+    color: white;
+    text-align: center;
+}
+
+.result-box.lose {
+    background-color: rgba(128, 0, 0, 0.7); /* reddish for lose */
+}
+
+.return-button {
+    font-family: 'Press Start 2P', cursive;
+    padding: 15px 30px;
+    margin-top: 30px;
+    font-size: 12px;
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.return-button:hover {
+    background-color: darkgreen;
+}

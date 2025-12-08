@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald&family=Press+Start+2P&display=swap');
+
 body {
     background-image: url('../images/sky_heist.jpg');
     color: white;
@@ -11,6 +13,8 @@ body {
     display: none;
     padding: 50px;
     min-height: 100vh;
+    padding: 50px 20px;
+    box-sizing: border-box;
 }
 
 /* PAGE 3 */
@@ -32,6 +36,11 @@ body {
     letter-spacing: 2px;
     color: #FFD700;  /* golden, like a highlight */
     margin: 0 0 18px 0;
+    text-shadow:
+        -2px -2px 0 black,
+         2px -2px 0 black,
+        -2px  2px 0 black,
+         2px  2px 0 black
 }
 
 #roleInstructions {
@@ -46,6 +55,11 @@ body {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 52px;
     letter-spacing: 3px;
+    text-shadow:
+        -2px -2px 0 black,
+         2px -2px 0 black,
+        -2px  2px 0 black,
+         2px  2px 0 black;
 }
 
 #startGameBtn {
@@ -67,14 +81,15 @@ body {
     display: flex;
     justify-content: center;
     gap: 30px;
-    margin-bottom: 30px;
+    margin: 20px auto 30px auto;
+    flex-wrap: wrap;
 }
 
 .headerBox {
     border: 2px solid white;
     padding: 20px 40px;
     border-radius: 15px;
-    background-color: rgba(255,255,255,0.1);
+    background-color: rgba(0,0,0,0.7);
     font-size: 22px;
 }
 
@@ -89,6 +104,9 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+    gap: 20px;
+    box-sizing: border-box;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.75)
 }
 
 .airportListBox {

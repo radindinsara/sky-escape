@@ -51,6 +51,8 @@ async function loadGameLayout(){
       console.error("Unexpected airports response shape:", data);
     }
 
+    sessionStorage.setItem("AirPortList",airports);
+
     const airportList = document.getElementById("airportList");
     airportList.innerHTML = "";
     airports.forEach((code,index)=>{
@@ -59,6 +61,21 @@ async function loadGameLayout(){
         li.dataset.ident = code.ident;
         airportList.appendChild(li);
     });
+
+    const randomAirport = airports[Math.floor(Math.random() * airports.length)];
+
+    sessionStorage.setItem("RandomAirport", JSON.stringify(randomAirport));
+
+    let goldenAirport = airports[Math.floor(Math.random() * airports.length)];
+
+    if (goldenAirport.ident === randomAirport.ident) {
+
+    goldenAirport = airports[Math.floor(Math.random() * airports.length)];
+    }
+
+    sessionStorage.setItem("GoldenAirport", JSON.stringify(goldenAirport));
+
+
 }
 
 // START BUTTON
@@ -82,14 +99,45 @@ document.getElementById("goBtn").onclick = function(){
     }
 
     const selected = items[num - 1];
-    const ident = selected.dataset.ident;z
+    const randomAirport = JSON.parse(sessionStorage.getItem("RandomAirport"));
+    const goldenAirport = JSON.parse(sessionStorage.getItem("GoldenAirport"));
+
+    const goldenPopup = document.getElementById("goldenPopup");
+    const closePopup = document.getElementById("closePopup");
+
+
+    if (selected.classList.contains("used")) {
+        alert("You already used this airport!");
+        input.value = "";
+        return;
+    }
+
+    const ident = selected.dataset.ident;
+
+    closePopup.onclick = () => {
+    goldenPopup.style.display = "none";
+    };
+
+
+    if(goldenAirport.ident === ident){
+
+        updateScoreGolden();
+        goldenPopup.style.display = "flex";
+    }
+
+
+    if (ident === randomAirport.ident) {
+         window.location.href="Nathan_M4/P7.html";
+    }
 
     sessionStorage.setItem("AirPortSelected", ident);
 
+     selected.classList.add("used");
     // Update score based on role
-    updateScore();
+
 
     input.value="";
+    updateScore();
 
 }
 
@@ -115,7 +163,7 @@ function startTimer() {
 
 function updateScore() {
      let role = sessionStorage.getItem("playerRole") || "thief";
-     let score = document.getElementById("headerScore").innerText;
+     let score = parseInt(document.getElementById("headerScore").innerText);
     if (role === "Police") {
         score -= 10;
     } else if (role === "Thief") {
@@ -123,6 +171,14 @@ function updateScore() {
     }
     document.getElementById("headerScore").innerText = score;
 }
+
+function updateScoreGolden() {
+     let role = sessionStorage.getItem("playerRole") || "thief";
+     let score = parseInt(document.getElementById("headerScore").innerText);
+     score +=5;
+    document.getElementById("headerScore").innerText = score;
+}
+
 
 // ON PAGE LOAD
 window.onload = function(){

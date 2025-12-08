@@ -15,18 +15,20 @@ function loadRoleInstructions(){
     if(role === "Police"){
         selectedRole.innerText = "You have selected Police";
         instructions.innerHTML = `
-            - Catch the thief.<br>
-            - 120 seconds total.<br>
-            - Start with 250 points.<br>
-            - Predict thief's moves carefully.
+            - Your Goal is to catch the Thief.<br>
+            - You have 120 second or 2 Minutes to do so.<br>
+            - Initially you tart with 250 points.<br>
+            - And points go down by 10 everytime you fail to catch the thief.<br>
+            - Predict thief's moves carefully and good luck.
         `;
     } else {
         selectedRole.innerText = "You have selected Thief";
         instructions.innerHTML = `
-            - Escape from police.<br>
-            - 120 seconds total.<br>
-            - Start with 0 points.<br>
-            - Gain 10 points each new airport.
+            - Your goal is to escape from police.<br>
+            - You have 120 second or 2 Minutes to do so.<br>
+            - Initially you start with 0 points.<br>
+            - Gain 10 points each time you go to a new airport and evade the police.<br>
+            - Be careful try to predict the Police Moves .<br>
         `;
     }
 

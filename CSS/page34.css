@@ -17,9 +17,9 @@ body {
 .roleBox {
     border: 2px solid white;
     padding: 30px;
-    width: 70%;
+    width: 90%;
     margin: 0 auto 30px auto;
-    border-radius: 15px;
+    border-radius: 20px;
     background-color:  rgba(0, 0, 0, 0.7);
     text-align: left;
     font-size: 20px;

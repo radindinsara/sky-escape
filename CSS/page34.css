@@ -13,7 +13,6 @@ body {
 
 .page {
     display: none;
-    padding: 50px;
     min-height: 100vh;
     padding: 50px 20px;
     box-sizing: border-box;
@@ -24,9 +23,9 @@ body {
     border: none;
     padding: 30px;
     width: 90%;
-    margin: 0 auto 30px auto;
+    margin: 90px auto 30px auto;
     border-radius: 20px;
-    background-color:  rgba(0, 0, 0, 0.45);
+    background-color: rgba(0, 0, 0, 0.45);
     text-align: left;
     font-size: 20px;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7);
@@ -43,7 +42,7 @@ body {
         -2px -2px 0 black,
          2px -2px 0 black,
         -2px  2px 0 black,
-         2px  2px 0 black
+         2px  2px 0 black;
 }
 
 #roleInstructions {
@@ -51,6 +50,9 @@ body {
     font-size: 18px;
     line-height: 1.8;
     text-align: center;
+    width: 100%;
+    display: block;
+    margin: 0 auto;
 }
 
 #goodLuck {
@@ -92,9 +94,9 @@ body {
 .headerBox {
     padding: 20px 40px;
     border-radius: 15px;
-    background-color: rgba(0, 0, 0, 0.45);  /* transparent */
+    background-color: rgba(0, 0, 0, 0.45);
     font-size: 22px;
-    border: none;  /* removed white border */
+    border: none;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7);
 }
 
@@ -104,13 +106,13 @@ body {
     margin: 0 auto 30px auto;
     border-radius: 15px;
     padding: 20px;
-    background-color: rgba(0, 0, 0, 0.45); /* transparent */
+    background-color: rgba(0, 0, 0, 0.45);
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     gap: 20px;
     box-sizing: border-box;
-    border: none;  /* removed white border */
+    border: none;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.75);
 }
 

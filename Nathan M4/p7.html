@@ -1,44 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>P7 Summary Page</title>
-  <link rel="stylesheet" href="P7try.css">
+    <title>Sky Heist – Summary</title>
+    <link rel="stylesheet" href="p7.css">
 </head>
 <body>
+    <div class="summary-container">
+        <h1>Sky Heist Mission Recap</h1>
 
-<div class="p7-container">
-    <h2>P7 Summary / Info / Credits</h2>
+        <section class="summary-section">
+            <h2>Your Journey</h2>
+            <p id="playerNameText">Player: <span id="playerName"></span></p>
 
-    <div>
-        <span class="pill">Role: <strong>Thief</strong></span>
-        <span class="pill">Score: <strong>120</strong></span>
+            <!-- Win/Lose box -->
+            <div id="resultBox" class="result-box">
+                <h3>Result</h3>
+                <p id="result"><span></span></p>
+            </div>
+
+            <p>This page wraps up your run through Sky Heist. You navigated the skies, made tough calls, and shaped your own story. Below is a quick overview of what the game teaches you about its world and interface.</p>
+        </section>
+
+        <section class="summary-section">
+            <h2>Credits</h2>
+            <p>
+                All the credits go to all the gr
+            </p>
+        </section>
+
+        <button class="return-button" onclick="goToHome()">Return to Home</button>
     </div>
 
-    <div class="section">
-        <h3>Final Summary</h3>
-        <p><strong>Player:</strong> Alex</p>
-        <p><strong>Message:</strong> You escaped successfully!</p>
-    </div>
-    <div class="section">
-        <h3>Instructions</h3>
-        <ul>
-            <li>This is the final summary page of the game.</li>
-            <li>Normally the data would load from the game, but here it is hardcoded for testing.</li>
-        </ul>
-    </div>
-
-    <div class="section">
-        <h3>Credits</h3>
-        <ul>
-            <li>M1 – P1 & P2</li>
-            <li>M2 – P3 & P4</li>
-            <li>M3 – P5 & P6</li>
-            <li>M4 – P7 + Integration</li>
-        </ul>
-    </div>
-    <div class="section">
-      <button>Play Again</button>
-      <button class="secondary">Back to Start</button>
-    </div>
-  </div>
+    <script src="p7.js"></script>
 </body>
+</html>

@@ -1,13 +1,13 @@
 // summary.js
 
 // Load player name
-const playerName = localStorage.getItem("playerName");
+const playerName = sessionStorage.getItem("PlayerName");
 if (playerName) {
     document.getElementById("playerName").textContent = playerName;
 }
 
 // Load final score
-const finalScore = localStorage.getItem("finalScore");
+const finalScore = sessionStorage.getItem("FinalScore");
 if (finalScore) {
     document.getElementById("finalScore").textContent = finalScore;
 }
@@ -20,5 +20,30 @@ if (result) {
 
 // Navigate home
 function goToHome() {
-    window.location.href = "home.html";
+    window.location.href = "../home.html";
 }
+
+
+function UpdateList(){
+    let role = sessionStorage.getItem("playerRole");
+
+   if (role === "Police")
+   {
+       document.getElementById("result").textContent = "Win";
+
+    }
+   else if (role === "Thief")
+    {
+        if(finalScore >=50){
+             document.getElementById("result").textContent = "Win";
+        }
+        else
+        {
+             document.getElementById("result").textContent = "Loose";
+        }
+
+    }
+}
+
+
+UpdateList();

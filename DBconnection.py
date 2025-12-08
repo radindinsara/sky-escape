@@ -7,6 +7,6 @@ def get_db():
         port=3306,
         database='flight_game',
         user='root',
-        password='1111',
+        password='Hiwot@2023',
         autocommit=True
 )

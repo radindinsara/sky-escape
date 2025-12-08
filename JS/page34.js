@@ -125,11 +125,6 @@ document.getElementById("goBtn").onclick = function(){
         goldenPopup.style.display = "flex";
     }
 
-
-    if (ident === randomAirport.ident) {
-         window.location.href="Nathan_M4/P7.html";
-    }
-
     sessionStorage.setItem("AirPortSelected", ident);
 
      selected.classList.add("used");
@@ -138,6 +133,12 @@ document.getElementById("goBtn").onclick = function(){
 
     input.value="";
     updateScore();
+
+    if (ident === randomAirport.ident) {
+        let finalScore = parseInt(document.getElementById("headerScore").innerText);
+        sessionStorage.setItem("FinalScore",finalScore);
+         window.location.href="Nathan_M4/P7.html";
+    }
 
 }
 

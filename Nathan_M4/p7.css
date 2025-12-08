@@ -43,15 +43,6 @@ h1 {
     text-align: left;
 }
 
-.summary-section ul {
-    list-style: none;
-    padding: 0;
-}
-
-.summary-section ul li::before {
-    content: "• ";
-    color: lightgreen;
-}
 
 #playerNameText {
     font-size: 20px;

@@ -51,7 +51,6 @@ async function loadGameLayout(){
       console.error("Unexpected airports response shape:", data);
     }
 
-    //let airports = ["JFK","LAX","ORD","ATL","DFW","DEN","SFO","SEA","MIA","BOS","LAS","PHX","IAH","MSP","CLT"];
     const airportList = document.getElementById("airportList");
     airportList.innerHTML = "";
     airports.forEach((code,index)=>{
@@ -83,7 +82,7 @@ document.getElementById("goBtn").onclick = function(){
     }
 
     const selected = items[num - 1];
-    const ident = selected.dataset.ident;
+    const ident = selected.dataset.ident;z
 
     sessionStorage.setItem("AirPortSelected", ident);
 

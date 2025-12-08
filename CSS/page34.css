@@ -103,9 +103,15 @@ body {
 }
 
 .airportImg {
-    width: 250px;
+    width: 380px;
     height: auto;
     border-radius: 10px;
+}
+
+.imageBox {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
 
 /* INPUT & BUTTON */

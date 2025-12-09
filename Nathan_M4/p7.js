@@ -12,11 +12,6 @@ if (finalScore) {
     document.getElementById("finalScore").textContent = finalScore;
 }
 
-// Load game result (Win/Lose)
-const result = localStorage.getItem("result");
-if (result) {
-    document.getElementById("result").textContent = result;
-}
 
 // Navigate home
 function goToHome() {
